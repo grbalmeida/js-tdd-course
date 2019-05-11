@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Make my sandwich!</title>
+  </head>
+  <body>
+    <button id='button'>Make my sandwich!</button>
+  </body>
+  <script>
+    const sandwich = {
+      bread: 'white',
+      cheese: 'cheddar',
+      
+      prepare: function() {
+        return `I want a sandwich with ${this.bread} bread and ${this.cheese} cheese`
+      },
+
+      make: function() {
+	window.setTimeout(() => {
+	  console.log(this.prepare())
+	}, 500)
+      }
+    }
+
+    const button = document.getElementById('button')
+
+    button.addEventListener('click', function() {
+      sandwich.make()
+    })
+
+    button.addEventListener('click', () => sandwich.make())
+  </script>
+</html>

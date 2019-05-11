@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generator Ajax</title>
+  </head>
+  <script>
+    function ajax(url) {
+      fetch(url)
+        .then(data => data.json())
+        .then(data => getData.next(data))
+    }
+
+    function* ajaxGenerator() {
+      console.log('Searching posts...')
+      const posts = yield ajax('https://willianjusten.com.br/search.json')
+      console.log(posts)
+
+      console.log('Searching for data from GitHub')
+      const willian = yield ajax('https://api.github.com/users/willianjusten')
+      console.log(willian)
+
+      console.log('Searching for data from GitHub')
+      const gilvan = yield ajax('https://api.github.com/users/grbalmeida')
+      console.log(gilvan)
+    }
+
+    const getData = ajaxGenerator()
+    getData.next()
+  </script>
+</html>

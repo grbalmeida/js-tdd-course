@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promises Example</title>
+  </head>
+  <script>
+    const posts = fetch('https://willianjusten.com.br/search.json')
+      .then(data => data.json())
+      .then(data => data.map(post => console.log(post.title)))
+      .then(data => {
+        throw new Error()
+      })
+      .catch(error => console.log(error))
+  </script>
+</html>

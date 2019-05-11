@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using template literals for HTML fragments</title>
+  </head>
+  <body>
+  
+  </body>
+  <script>
+    const article = {
+      title: 'Learning Template Strings',
+      intro: 'A brief explanation of how to use ES6 template strings in your code today',
+      body: 'Lorem ipsum dolor',
+      tags: ['es6', 'js', 'template-literal'],
+      author: ''
+    }
+
+    function renderAuthor(name) {
+      return name ? name : 'Unknown'
+    }
+
+    const markup = `
+      <article>
+        <header>
+	  <h1>${article.title}</h1>
+	</header>
+	<section>
+	  <p>${article.intro}</p>
+	</section>
+	<footer>
+	  <ul>
+	    ${article.tags.map(tag => `<li>${tag}</li>`).join('')}
+	  </ul>
+	  <p>Author: ${renderAuthor(article.author)}</p>
+	</footer>
+      </article>
+    `
+
+    document.body.innerHTML = markup
+  </script>
+</html>
