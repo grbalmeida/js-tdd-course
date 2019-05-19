@@ -8,7 +8,10 @@
   <div id='albums'></div>
   <script src='../dist/spotify-wrapper.umd.js'></script>
   <script>
-    const albums = spotifyWrapper.searchAlbums('Incubus')
+    const spotify = new SpotifyWrapper({
+      token: 'BQDOb8zWQXJ9DTEDH8Zdo8lZFjfpY6xsudJ1q1GKgPjkqk2ttPos76TYwtN2Kgx3PtCSCKCmSK-6XkZkY4lyW9nAX0isgJ5kZE15AizAteYiMOPiH99_ge85XN99giNHiIffySXxnhQ0nRMDC-7xzP0jnZUDSmUd4S6EV2g4Og'
+    })
+    const albums = spotify.search.albums('Incubus')
     const albumsEl = document.getElementById('albums')
 
     albums.then(data => {
