@@ -10,7 +10,8 @@ function createMarkup(tracks) {
 }
 
 export default function renderAlbumTracks(data, element) {
+  const internalElement = element;
   const markup = createMarkup(data);
 
-  element.innerHTML = markup;
+  internalElement.innerHTML = markup;
 }

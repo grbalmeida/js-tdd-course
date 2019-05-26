@@ -1,4 +1,5 @@
 export default function renderAlbumInfo(data, element) {
+  const internalElement = element;
   const markup = `
     <img class="album-image" src="${data.images[0].url}" alt="${data.name}">
     <p class="album-title">${data.name}</p>
@@ -6,7 +7,7 @@ export default function renderAlbumInfo(data, element) {
     <p class="album-counter">${data.tracks.total} Songs</p>
   `;
 
-  element.innerHTML = markup;
+  internalElement.innerHTML = markup;
 
   return data;
 }

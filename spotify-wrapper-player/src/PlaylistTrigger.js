@@ -5,10 +5,10 @@ export default function playlistTrigger() {
   albumTracks.addEventListener('click', (e) => {
     const target = e.target.parentNode;
 
-    if(target.classList.contains('active')) {
+    if (target.classList.contains('active')) {
       audioObject.pause();
     } else {
-      if(audioObject) {
+      if (audioObject) {
         audioObject.pause();
       }
 
@@ -16,7 +16,7 @@ export default function playlistTrigger() {
       audioObject.play();
       target.classList.add('active');
 
-      audioObject.addEventListener('pause', (e) => {
+      audioObject.addEventListener('pause', () => {
         target.classList.remove('active');
       });
     }
