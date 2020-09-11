@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/grbalmeida/js-tdd-course#readme",
   "dependencies": {
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
